@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АвтоМастер - автосервис</title>
+  <meta name="description" content="Профессиональный автосервис. Диагностика, ремонт, ТО. Работаем без выходных.">
+</head>
+<body>
+
+<!-- НАВИГАЦИЯ -->
+<nav>
+  <a href="#top">
+    <div>
+      <svg viewBox="0 0 24 24" width="16" height="16">
+        <path d="M3 17l5-10h8l5 10" fill="black"/>
+        <rect x="2" y="17" width="20" height="5" rx="1" fill="black"/>
+      </svg>
+    </div>
+    <span>АВТОМАСТЕР</span>
+  </a>
+
+  <!-- Десктопная навигация -->
+  <div>
+    <a href="#services">Услуги</a>
+    <a href="#about">О нас</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contact">Контакты</a>
+    <a href="tel:+78001234567">8 800 123-45-67</a>
+  </div>
+
+  <!-- Мобильное бургер-меню -->
+  <button id="menu-btn">☰</button>
+
+  <!-- Мобильное меню (изначально скрыто) -->
+  <div id="mobile-menu" style="display: none;">
+    <a href="#services">Услуги</a>
+    <a href="#about">О нас</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contact">Контакты</a>
+    <a href="tel:+78001234567">8 800 123-45-67</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top">
+  <div>
+    <div>ПРОФЕССИОНАЛЬНЫЙ АВТОСЕРВИС</div>
+    <h1>
+      Ремонтируем <span>любые авто!</span> без очередей
+    </h1>
+    <p>
+      14 лет опыта, сертифицированные мастера, гарантия на все виды работ. Диагностика за 30 минут. Приезжайте - разберёмся.
+    </p>
+    <div>
+      <a href="#contact">ЗАПИСАТЬСЯ</a>
+      <a href="#services">НАШИ УСЛУГИ</a>
+    </div>
+    <div>
+      <div><span></span>Гарантия 1 год</div>
+      <div><span></span>Запчасти с пробегом</div>
+      <div><span></span>Работаем без выходных</div>
+    </div>
+  </div>
+
+  <!-- Иллюстрация (машинка) – замените на своё изображение при необходимости -->
+  <div>
+    <svg viewBox="0 0 520 280" width="400">
+      <path d="M60 200 L80 130 L120 100 L220 90 L300 90 L380 120 L440 160 L450 200 Z" fill="#ccc" stroke="black" stroke-width="2"/>
+      <path d="M130 130 L160 95 L340 95 L380 130 Z" fill="#aaa" stroke="black" stroke-width="1.5"/>
+      <path d="M145 127 L168 100 L245 100 L245 127 Z" fill="#bbb" stroke="black" stroke-width="1"/>
+      <path d="M253 127 L253 100 L335 100 L368 127 Z" fill="#bbb" stroke="black" stroke-width="1"/>
+      <circle cx="145" cy="205" r="38" fill="black" stroke="black" stroke-width="3"/>
+      <circle cx="145" cy="205" r="24" fill="gray" stroke="black" stroke-width="2"/>
+      <circle cx="145" cy="205" r="8" fill="orange"/>
+      <circle cx="370" cy="205" r="38" fill="black" stroke="black" stroke-width="3"/>
+      <circle cx="370" cy="205" r="24" fill="gray" stroke="black" stroke-width="2"/>
+      <circle cx="370" cy="205" r="8" fill="orange"/>
+      <path d="M60 168 L80 158 L85 175 L62 178 Z" fill="orange" opacity="0.8"/>
+      <path d="M448 168 L435 160 L432 178 L447 180 Z" fill="red" opacity="0.8"/>
+      <ellipse cx="255" cy="246" rx="200" ry="12" fill="black" opacity="0.5"/>
+      <path d="M90 162 L430 162" stroke="orange" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 8"/>
+    </svg>
+  </div>
+
+  <div>
+    <span>ПРОКРУТИТЕ</span>
+    <div></div>
+  </div>
+</section>
+
+<!-- СТАТИСТИКА -->
+<section id="about">
+  <div>
+    <div><span>14</span><span>лет на рынке</span></div>
+    <div><span>8 400+</span><span>довольных клиентов</span></div>
+    <div><span>97%</span><span>с первого раза</span></div>
+    <div><span>24/7</span><span>телефон поддержки</span></div>
+  </div>
+</section>
+
+<!-- УСЛУГИ -->
+<section id="services">
+  <div>
+    <div>
+      <span>Что мы делаем</span>
+      <h2>Наши услуги</h2>
+    </div>
+    <div>
+      <!-- Услуга 1 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <circle cx="24" cy="24" r="10" stroke="orange" stroke-width="2.5" fill="none"/>
+            <circle cx="24" cy="24" r="4" fill="orange"/>
+            <line x1="24" y1="4" x2="24" y2="14" stroke="orange" stroke-width="2.5"/>
+            <line x1="24" y1="34" x2="24" y2="44" stroke="orange" stroke-width="2.5"/>
+            <line x1="4" y1="24" x2="14" y2="24" stroke="orange" stroke-width="2.5"/>
+            <line x1="34" y1="24" x2="44" y2="24" stroke="orange" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h3>Компьютерная диагностика</h3>
+        <p>Полная проверка электронных систем. Расшифровка ошибок, анализ датчиков.</p>
+        <div>от 800 ₽</div>
+      </div>
+      <!-- Услуга 2 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <rect x="8" y="20" width="32" height="14" rx="3" stroke="orange" stroke-width="2.5" fill="none"/>
+            <path d="M14 20V16a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke="orange" stroke-width="2.5" fill="none"/>
+            <circle cx="17" cy="27" r="3" fill="orange"/>
+            <circle cx="31" cy="27" r="3" fill="orange"/>
+          </svg>
+        </div>
+        <h3>Замена масла и фильтров</h3>
+        <p>Оригинальные расходники. Все марки авто. Запись на удобное время.</p>
+        <div>от 1 200 ₽</div>
+      </div>
+      <!-- Услуга 3 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <circle cx="16" cy="34" r="8" stroke="orange" stroke-width="2.5" fill="none"/>
+            <circle cx="32" cy="34" r="8" stroke="orange" stroke-width="2.5" fill="none"/>
+            <path d="M8 34H4V20l8-8h24l8 8v14h-4" stroke="orange" stroke-width="2.5" fill="none"/>
+            <line x1="24" y1="34" x2="24" y2="34" stroke="orange" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h3>Ремонт тормозной системы</h3>
+        <p>Колодки, диски, суппорты, трубки. Проверка АБС. Гарантия на работы.</p>
+        <div>от 2 500 ₽</div>
+      </div>
+      <!-- Услуга 4 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <circle cx="24" cy="24" r="16" stroke="orange" stroke-width="2.5" fill="none"/>
+            <circle cx="24" cy="24" r="6" stroke="orange" stroke-width="2.5" fill="none"/>
+            <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="orange" stroke-width="2.5"/>
+            <path d="M13.4 13.4l2.8 2.8M31.8 31.8l2.8 2.8M13.4 34.6l2.8-2.8M31.8 16.2l2.8-2.8" stroke="orange" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Шиномонтаж и балансировка</h3>
+        <p>Сезонная смена шин, хранение дисков. Ремонт проколов за 15 минут.</p>
+        <div>от 600 ₽</div>
+      </div>
+      <!-- Услуга 5 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <path d="M6 30l8-16h20l8 16" stroke="orange" stroke-width="2.5" fill="none"/>
+            <rect x="4" y="30" width="40" height="12" rx="3" stroke="orange" stroke-width="2.5" fill="none"/>
+            <line x1="16" y1="30" x2="16" y2="42" stroke="orange" stroke-width="1.5"/>
+            <line x1="32" y1="30" x2="32" y2="42" stroke="orange" stroke-width="1.5"/>
+            <circle cx="13" cy="38" r="2" fill="orange"/>
+            <circle cx="35" cy="38" r="2" fill="orange"/>
+          </svg>
+        </div>
+        <h3>Кузовной ремонт</h3>
+        <p>Рихтовка, покраска, полировка. Точная подбор цвета. Гарантия 2 года.</p>
+        <div>от 5 000 ₽</div>
+      </div>
+      <!-- Услуга 6 -->
+      <div>
+        <div>
+          <svg viewBox="0 0 48 48" width="40" height="40">
+            <path d="M24 6l4 8h8l-6.5 5 2.5 8L24 22l-8 5 2.5-8L12 14h8z" stroke="orange" stroke-width="2.5" fill="none"/>
+            <path d="M10 36h28M14 42h20" stroke="orange" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h3>Техническое обслуживание</h3>
+        <p>Плановое ТО по регламенту производителя. Отметка в сервисной книжке.</p>
+        <div>от 3 000 ₽</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОЧЕМУ МЫ -->
+<section>
+  <div>
+    <div>
+      <span>Почему выбирают нас</span>
+      <h2>Честно.<br>Быстро.<br>Надёжно.</h2>
+      <p>Работаем без скрытых наценок. Перед ремонтом всегда согласовываем стоимость. Если что-то пошло не так - переделываем бесплатно.</p>
+      <a href="tel:+78001234567">8 800 123-45-67</a>
+      <div>Звонок бесплатный, работаем 8:00-22:00</div>
+    </div>
+    <div>
+      <div>
+        <div><svg viewBox="0 0 16 16" width="16" height="16"><path d="M13 4L6.5 11 3 7.5" fill="none" stroke="black" stroke-width="2"/></svg></div>
+        <div><div>Прозрачное ценообразование</div><div>Смета до начала работ. Никаких сюрпризов при выдаче.</div></div>
+      </div>
+      <div>
+        <div><svg viewBox="0 0 16 16" width="16" height="16"><path d="M13 4L6.5 11 3 7.5" fill="none" stroke="black" stroke-width="2"/></svg></div>
+        <div><div>Официальные запчасти</div><div>Работаем только с проверенными поставщиками. Все комплектующие с документами.</div></div>
+      </div>
+      <div>
+        <div><svg viewBox="0 0 16 16" width="16" height="16"><path d="M13 4L6.5 11 3 7.5" fill="none" stroke="black" stroke-width="2"/></svg></div>
+        <div><div>Гарантия на работы</div><div>Письменная гарантия на весь выполненный ремонт - от 6 месяцев до 2 лет.</div></div>
+      </div>
+      <div>
+        <div><svg viewBox="0 0 16 16" width="16" height="16"><path d="M13 4L6.5 11 3 7.5" fill="none" stroke="black" stroke-width="2"/></svg></div>
+        <div><div>Срок соблюдаем</div><div>Договорились - сделаем. Задержка - компенсируем скидкой.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section id="reviews">
+  <div>
+    <div>
+      <span>Что говорят клиенты</span>
+      <h2>Отзывы</h2>
+    </div>
+    <div>
+      <div>
+        <div>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p>«Быстро нашли проблему с двигателем, которую два других сервиса не смогли диагностировать. Работали аккуратно, без лишних трат.»</p>
+        <div><div>Сергей К.</div><div>Toyota Camry</div></div>
+      </div>
+      <div>
+        <div>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p>«Делала плановое ТО. Всё прозрачно - показали что делают, объяснили зачем. Цены честные, никаких сюрпризов.»</p>
+        <div><div>Наталья В.</div><div>Kia Sportage</div></div>
+      </div>
+      <div>
+        <div>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p>«Ремонтировал подвеску после ямы. Сделали за один день, дали гарантию полгода. Уже рекомендовал коллегам.»</p>
+        <div><div>Алексей Р.</div><div>BMW 3 Series</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ И ФОРМА -->
+<section id="contact">
+  <div>
+    <div>
+      <span>Свяжитесь с нами</span>
+      <h2>Записаться<br>на ремонт</h2>
+      <div>
+        <div>
+          <div><svg viewBox="0 0 20 20" width="20" height="20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg></div>
+          <div><div>Телефон</div><div>8 800 123-45-67</div><div>Бесплатно, 8:00–22:00</div></div>
+        </div>
+        <div>
+          <div><svg viewBox="0 0 20 20" width="20" height="20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg></div>
+          <div><div>Адрес</div><div>ул. Средняя, 12</div><div>Ессентуки</div></div>
+        </div>
+        <div>
+          <div><svg viewBox="0 0 20 20" width="20" height="20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/></svg></div>
+          <div><div>Режим работы</div><div>Пн–Вс: 8:00–22:00</div><div>Без выходных</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Форма -->
+    <div id="form-container">
+      <form id="callback-form">
+        <h3>Оставить заявку</h3>
+        <div><label>Ваше имя</label><input type="text" name="name" placeholder="Иван Петров" required></div>
+        <div><label>Телефон</label><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></div>
+        <div><label>Услуга</label>
+          <select name="service">
+            <option value="">Выберите услугу...</option>
+            <option>Компьютерная диагностика</option>
+            <option>Замена масла и фильтров</option>
+            <option>Ремонт тормозной системы</option>
+            <option>Шиномонтаж и балансировка</option>
+            <option>Кузовной ремонт</option>
+            <option>Техническое обслуживание</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div><label>Комментарий (необязательно)</label><textarea name="message" rows="3" placeholder="Опишите проблему или вопрос..."></textarea></div>
+        <button type="submit">Отправить заявку</button>
+        <p>Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+      </form>
+      <div id="form-success" style="display: none;">
+        <div>
+          <svg viewBox="0 0 24 24" width="32" height="32"><path d="M5 12l5 5L19 7" fill="none" stroke="black" stroke-width="2.5"/></svg>
+        </div>
+        <h3>Заявка отправлена!</h3>
+        <p>Мы перезвоним вам в ближайшие 15 минут.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+  <div>АВТОМАСТЕР</div>
+  <div>© 2025 АвтоМастер. Все права защищены.</div>
+  <div>ул. Автомобильная, 12 · Москва</div>
+</footer>
+
+<script>
+  // Мобильное меню (переключение видимости)
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function() {
+      if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+        mobileMenu.style.display = 'block';
+      } else {
+        mobileMenu.style.display = 'none';
+      }
+    });
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.style.display = 'none';
+      });
+    });
+  }
+
+  // Обработка формы (имитация отправки)
+  const form = document.getElementById('callback-form');
+  const successDiv = document.getElementById('form-success');
+  if (form && successDiv) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      successDiv.style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>

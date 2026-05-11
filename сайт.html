@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АвтоМастер - автосервис</title>
+  <meta name="description" content="Профессиональный автосервис. Диагностика, ремонт, ТО. Работаем без выходных.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ---------- TAILWIND / КАСТОМНЫЕ СТИЛИ (собраны из вашего проекта) ---------- */
+    @layer properties{
+      @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){
+        *,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-border-style:solid;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial}
+      }
+    }
+    :root {
+      --ink: #0c0c0c;
+      --steel: #1a1a1a;
+      --plate: #242424;
+      --muted: #6b6b6b;
+      --border: #2e2e2e;
+      --amber: #f5a500;
+      --amber-dim: #c47f00;
+      --off-white: #f0ede8;
+      --text-light: #c8c3bb;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: var(--ink);
+      color: var(--off-white);
+      font-family: 'Fira Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    /* Утилиты (адаптировано из вашего Tailwind + кастомов) */
+    .flex { display: flex; }
+    .grid { display: grid; }
+    .hidden { display: none; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .fixed { position: fixed; }
+    .inset-0 { inset: 0; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .top-16 { top: 64px; }
+    .bottom-12 { bottom: 48px; }
+    .left-1\/2 { left: 50%; }
+    .z-10 { z-index: 10; }
+    .z-50 { z-index: 50; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-14 { margin-bottom: 56px; }
+    .mt-10 { margin-top: 40px; }
+    .gap-1 { gap: 4px; }
+    .gap-1\.5 { gap: 6px; }
+    .gap-2 { gap: 8px; }
+    .gap-4 { gap: 16px; }
+    .gap-5 { gap: 20px; }
+    .gap-6 { gap: 24px; }
+    .gap-8 { gap: 32px; }
+    .gap-12 { gap: 48px; }
+    .gap-16 { gap: 64px; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .w-full { width: 100%; }
+    .w-10 { width: 40px; }
+    .w-8 { width: 32px; }
+    .w-4 { width: 16px; }
+    .w-5 { width: 20px; }
+    .h-10 { height: 40px; }
+    .h-8 { height: 32px; }
+    .h-4 { height: 16px; }
+    .h-5 { height: 20px; }
+    .min-h-screen { min-height: 100vh; }
+    .max-w-7xl { max-width: 80rem; }
+    .max-w-lg { max-width: 32rem; }
+    .px-6 { padding-left: 24px; padding-right: 24px; }
+    .px-4 { padding-left: 16px; padding-right: 16px; }
+    .py-8 { padding-top: 32px; padding-bottom: 32px; }
+    .py-12 { padding-top: 48px; padding-bottom: 48px; }
+    .py-24 { padding-top: 96px; padding-bottom: 96px; }
+    .p-2 { padding: 8px; }
+    .p-6 { padding: 24px; }
+    .text-center { text-align: center; }
+    .uppercase { text-transform: uppercase; }
+    .italic { font-style: italic; }
+    .no-underline { text-decoration: none; }
+    .pointer-events-none { pointer-events: none; }
+    .inline-block { display: inline-block; }
+    .grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .fill-amber-400 { fill: #fbbf24; }
+    .transform { transform: translate(var(--tw-translate-x), var(--tw-translate-y)); }
+    .-translate-x-1\/2 { --tw-translate-x: -50%; transform: translate(-50%, var(--tw-translate-y)); }
+    .clip-hero { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    /* Анимации из вашего проекта */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeInUp 0.7s ease forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .fade-in-delay-5 { animation-delay: 0.5s; opacity: 0; }
+    .fade-in-delay-6 { animation-delay: 0.6s; opacity: 0; }
+    /* Карточка услуги при ховере */
+    .service-card {
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      background: var(--steel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 24px;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--amber) !important;
+    }
+    /* Кастомный скроллбар */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+    /* Стили для формы */
+    .form-input {
+      background: var(--plate);
+      border: 1px solid var(--border);
+      color: var(--off-white);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 15px;
+      width: 100%;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus { border-color: var(--amber); }
+    .form-input::placeholder { color: var(--muted); }
+    /* Медиа-запросы */
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .md\:flex-row { flex-direction: row; }
+      .md\:px-12 { padding-left: 48px; padding-right: 48px; }
+      .md\:w-\[45\%\] { width: 45%; }
+      .md\:w-\[55\%\] { width: 55%; }
+    }
+    /* Кастомные дополнения для фона и градиентов */
+    .noise::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="min-h-screen" style="background: var(--ink);">
+
+  <!-- ==================== НАВИГАЦИЯ ==================== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12" 
+       style="height: 64px; background: rgba(12,12,12,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
+    
+    <a href="#top" class="flex items-center gap-2 no-underline">
+      <div class="w-8 h-8 flex items-center justify-center" style="background: var(--amber); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+        <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4">
+          <path d="M3 17l5-10h8l5 10" fill="var(--ink)"/>
+          <rect x="2" y="17" width="20" height="5" rx="1" fill="var(--ink)"/>
+        </svg>
+      </div>
+      <span style="font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: var(--off-white); letter-spacing: 0.05em;">
+        АВТО<span style="color: var(--amber);">МАСТЕР</span>
+      </span>
+    </a>
+
+    <!-- Десктопная навигация -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="nav-link" style="color: var(--text-light); text-decoration: none; font-family: 'Fira Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.03em;">Услуги</a>
+      <a href="#about" class="nav-link" style="color: var(--text-light); text-decoration: none; font-family: 'Fira Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.03em;">О нас</a>
+      <a href="#reviews" class="nav-link" style="color: var(--text-light); text-decoration: none; font-family: 'Fira Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.03em;">Отзывы</a>
+      <a href="#contact" class="nav-link" style="color: var(--text-light); text-decoration: none; font-family: 'Fira Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.03em;">Контакты</a>
+      <a href="tel:+78001234567" style="background: var(--amber); color: var(--ink); padding: 8px 20px; border-radius: 2px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.05em; text-decoration: none;">8 800 123-45-67</a>
+    </div>
+
+    <!-- Мобильное бургер-меню -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" style="background: none; border: none; cursor: pointer;">
+      <span class="menu-bar" style="display: block; width: 22px; height: 2px; background: var(--off-white); transition: all 0.2s;"></span>
+      <span class="menu-bar" style="display: block; width: 22px; height: 2px; background: var(--off-white); transition: all 0.2s;"></span>
+      <span class="menu-bar" style="display: block; width: 22px; height: 2px; background: var(--off-white); transition: all 0.2s;"></span>
+    </button>
+
+    <!-- Мобильное меню (изначально скрыто) -->
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 right-0 flex flex-col p-6 gap-5 hidden" style="background: var(--steel); border-bottom: 1px solid var(--border);">
+      <a href="#services" class="mobile-link" style="color: var(--off-white); text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 500;">Услуги</a>
+      <a href="#about" class="mobile-link" style="color: var(--off-white); text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 500;">О нас</a>
+      <a href="#reviews" class="mobile-link" style="color: var(--off-white); text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 500;">Отзывы</a>
+      <a href="#contact" class="mobile-link" style="color: var(--off-white); text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 500;">Контакты</a>
+      <a href="tel:+78001234567" style="color: var(--amber); font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700;">8 800 123-45-67</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="top" class="relative flex items-center clip-hero" style="min-height: 100vh; padding-top: 64px; background: var(--steel); overflow: hidden;">
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.35;"></div>
+    <div class="absolute pointer-events-none" style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,165,0,0.12) 0%, transparent 70%); top: -100px; right: -100px;"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Левый блок -->
+      <div>
+        <div class="inline-block mb-6 fade-in fade-in-delay-1" style="background: var(--amber); color: var(--ink); font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.15em; padding: 5px 14px;">ПРОФЕССИОНАЛЬНЫЙ АВТОСЕРВИС</div>
+        <h1 class="fade-in fade-in-delay-2" style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(48px, 7vw, 90px); line-height: 1; color: var(--off-white); margin: 0 0 24px; text-transform: uppercase;">
+          Ремонтируем <span style="color: var(--amber); display: block;">любые авто!</span> без очередей
+        </h1>
+        <p class="fade-in fade-in-delay-3" style="font-size: 17px; line-height: 1.7; color: var(--text-light); max-width: 440px; margin-bottom: 36px;">
+          14 лет опыта, сертифицированные мастера, гарантия на все виды работ. Диагностика за 30 минут. Приезжайте - разберёмся.
+        </p>
+        <div class="flex flex-wrap gap-4 fade-in fade-in-delay-4">
+          <a href="#contact" class="hero-btn" style="background: var(--amber); color: var(--ink); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; padding: 14px 32px; border-radius: 2px; text-decoration: none; display: inline-block; transition: background 0.2s;">ЗАПИСАТЬСЯ</a>
+          <a href="#services" class="hero-btn-outline" style="background: transparent; color: var(--off-white); font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.06em; padding: 14px 32px; border-radius: 2px; border: 1px solid var(--border); text-decoration: none; display: inline-block; transition: border-color 0.2s;">НАШИ УСЛУГИ</a>
+        </div>
+        <div class="flex flex-wrap gap-6 mt-10 fade-in fade-in-delay-5">
+          <div class="flex items-center gap-2"><div style="width: 6px; height: 6px; background: var(--amber); border-radius: 50%;"></div><span style="font-size: 13px; color: var(--text-light); font-weight: 500;">Гарантия 1 год</span></div>
+          <div class="flex items-center gap-2"><div style="width: 6px; height: 6px; background: var(--amber); border-radius: 50%;"></div><span style="font-size: 13px; color: var(--text-light); font-weight: 500;">Запчасти с пробегом</span></div>
+          <div class="flex items-center gap-2"><div style="width: 6px; height: 6px; background: var(--amber); border-radius: 50%;"></div><span style="font-size: 13px; color: var(--text-light); font-weight: 500;">Работаем без выходных</span></div>
+        </div>
+      </div>
+
+      <!-- Иллюстрация (машинка) – можно заменить на своё изображение -->
+      <div class="hidden md:flex justify-center items-center fade-in fade-in-delay-3">
+        <div style="position: relative;">
+          <div style="position: absolute; inset: -30px; background: radial-gradient(circle, rgba(245,165,0,0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+          <svg viewBox="0 0 520 280" fill="none" class="w-full max-w-lg" xmlns="car.png">
+            <path d="M60 200 L80 130 L120 100 L220 90 L300 90 L380 120 L440 160 L450 200 Z" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="2"/>
+            <path d="M130 130 L160 95 L340 95 L380 130 Z" fill="#252525" stroke="#3a3a3a" stroke-width="1.5"/>
+            <path d="M145 127 L168 100 L245 100 L245 127 Z" fill="#1a2a3a" stroke="#2a4a6a" stroke-width="1"/>
+            <path d="M253 127 L253 100 L335 100 L368 127 Z" fill="#1a2a3a" stroke="#2a4a6a" stroke-width="1"/>
+            <circle cx="145" cy="205" r="38" fill="#111" stroke="#2e2e2e" stroke-width="3"/>
+            <circle cx="145" cy="205" r="24" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="2"/>
+            <circle cx="145" cy="205" r="8" fill="#f5a500"/>
+            <circle cx="370" cy="205" r="38" fill="#111" stroke="#2e2e2e" stroke-width="3"/>
+            <circle cx="370" cy="205" r="24" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="2"/>
+            <circle cx="370" cy="205" r="8" fill="#f5a500"/>
+            <path d="M60 168 L80 158 L85 175 L62 178 Z" fill="#f5a500" opacity="0.8"/>
+            <path d="M448 168 L435 160 L432 178 L447 180 Z" fill="#cc2200" opacity="0.8"/>
+            <ellipse cx="255" cy="246" rx="200" ry="12" fill="black" opacity="0.5"/>
+            <path d="M90 162 L430 162" stroke="#f5a500" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2" style="color: var(--muted); font-size: 11px; letter-spacing: 0.12em; font-family: 'Oswald';">
+      <span>ПРОКРУТИТЕ</span>
+      <div style="width: 1px; height: 40px; background: linear-gradient(var(--border), transparent);"></div>
+    </div>
+  </section>
+
+  <!-- ==================== СТАТИСТИКА ==================== -->
+  <section id="about" style="background: var(--amber); padding: 0;">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4">
+      <div class="py-8 px-4 flex flex-col items-center text-center" style="border-right: 1px solid rgba(0,0,0,0.12);"><span style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,42px); color: var(--ink); line-height: 1;">14</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: rgba(0,0,0,0.6); text-transform: uppercase;">лет на рынке</span></div>
+      <div class="py-8 px-4 flex flex-col items-center text-center" style="border-right: 1px solid rgba(0,0,0,0.12);"><span style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,42px); color: var(--ink); line-height: 1;">8 400+</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: rgba(0,0,0,0.6); text-transform: uppercase;">довольных клиентов</span></div>
+      <div class="py-8 px-4 flex flex-col items-center text-center" style="border-right: 1px solid rgba(0,0,0,0.12);"><span style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,42px); color: var(--ink); line-height: 1;">97%</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: rgba(0,0,0,0.6); text-transform: uppercase;">с первого раза</span></div>
+      <div class="py-8 px-4 flex flex-col items-center text-center"><span style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,42px); color: var(--ink); line-height: 1;">24/7</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: rgba(0,0,0,0.6); text-transform: uppercase;">телефон поддержки</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== УСЛУГИ ==================== -->
+  <section id="services" style="padding: clamp(60px, 8vw, 120px) 0; background: var(--ink);">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="mb-14">
+        <span style="font-family: Oswald; color: var(--amber); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">Что мы делаем</span>
+        <h2 style="font-family: Oswald; font-weight: 700; font-size: clamp(32px,5vw,56px); color: var(--off-white); margin: 8px 0 0; text-transform: uppercase;">Наши услуги</h2>
+      </div>
+      <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+        <!-- Услуга 1 -->
+        <div class="service-card fade-in fade-in-delay-1">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <circle cx="24" cy="24" r="10" stroke="#f5a500" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="4" fill="#f5a500"/>
+              <line x1="24" y1="4" x2="24" y2="14" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="24" y1="34" x2="24" y2="44" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="4" y1="24" x2="14" y2="24" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="34" y1="24" x2="44" y2="24" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Компьютерная диагностика</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Полная проверка электронных систем. Расшифровка ошибок, анализ датчиков.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 800 ₽</div>
+        </div>
+        <!-- Услуга 2 -->
+        <div class="service-card fade-in fade-in-delay-2">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <rect x="8" y="20" width="32" height="14" rx="3" stroke="#f5a500" stroke-width="2.5"/>
+              <path d="M14 20V16a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke="#f5a500" stroke-width="2.5"/>
+              <circle cx="17" cy="27" r="3" fill="#f5a500"/>
+              <circle cx="31" cy="27" r="3" fill="#f5a500"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Замена масла и фильтров</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Оригинальные расходники. Все марки авто. Запись на удобное время.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 1 200 ₽</div>
+        </div>
+        <!-- Услуга 3 -->
+        <div class="service-card fade-in fade-in-delay-3">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <circle cx="16" cy="34" r="8" stroke="#f5a500" stroke-width="2.5"/>
+              <circle cx="32" cy="34" r="8" stroke="#f5a500" stroke-width="2.5"/>
+              <path d="M8 34H4V20l8-8h24l8 8v14h-4" stroke="#f5a500" stroke-width="2.5" stroke-linejoin="round"/>
+              <line x1="24" y1="34" x2="24" y2="34" stroke="#f5a500" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Ремонт тормозной системы</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Колодки, диски, суппорты, трубки. Проверка АБС. Гарантия на работы.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 2 500 ₽</div>
+        </div>
+        <!-- Услуга 4 -->
+        <div class="service-card fade-in fade-in-delay-4">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <circle cx="24" cy="24" r="16" stroke="#f5a500" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="6" stroke="#f5a500" stroke-width="2.5"/>
+              <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M13.4 13.4l2.8 2.8M31.8 31.8l2.8 2.8M13.4 34.6l2.8-2.8M31.8 16.2l2.8-2.8" stroke="#f5a500" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Шиномонтаж и балансировка</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Сезонная смена шин, хранение дисков. Ремонт проколов за 15 минут.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 600 ₽</div>
+        </div>
+        <!-- Услуга 5 -->
+        <div class="service-card fade-in fade-in-delay-5">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <path d="M6 30l8-16h20l8 16" stroke="#f5a500" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="4" y="30" width="40" height="12" rx="3" stroke="#f5a500" stroke-width="2.5"/>
+              <line x1="16" y1="30" x2="16" y2="42" stroke="#f5a500" stroke-width="1.5"/>
+              <line x1="32" y1="30" x2="32" y2="42" stroke="#f5a500" stroke-width="1.5"/>
+              <circle cx="13" cy="38" r="2" fill="#f5a500"/>
+              <circle cx="35" cy="38" r="2" fill="#f5a500"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Кузовной ремонт</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Рихтовка, покраска, полировка. Точная подбор цвета. Гарантия 2 года.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 5 000 ₽</div>
+        </div>
+        <!-- Услуга 6 -->
+        <div class="service-card fade-in fade-in-delay-6">
+          <div class="mb-4">
+            <svg viewBox="0 0 48 48" fill="none" class="w-10 h-10">
+              <path d="M24 6l4 8h8l-6.5 5 2.5 8L24 22l-8 5 2.5-8L12 14h8z" stroke="#f5a500" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M10 36h28M14 42h20" stroke="#f5a500" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 style="font-family: Oswald; font-weight: 600; font-size: 20px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Техническое обслуживание</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--text-light); margin: 0 0 16px;">Плановое ТО по регламенту производителя. Отметка в сервисной книжке.</p>
+          <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--amber);">от 3 000 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ПОЧЕМУ МЫ ==================== -->
+  <section style="padding: clamp(60px, 8vw, 120px) 0; background: var(--steel); position: relative; overflow: hidden;">
+    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--amber);"></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <span style="font-family: Oswald; color: var(--amber); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">Почему выбирают нас</span>
+        <h2 style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,48px); color: var(--off-white); margin: 8px 0 24px; text-transform: uppercase;">Честно.<br>Быстро.<br>Надёжно.</h2>
+        <p style="font-size: 16px; line-height: 1.8; color: var(--text-light); max-width: 440px;">Работаем без скрытых наценок. Перед ремонтом всегда согласовываем стоимость. Если что-то пошло не так - переделываем бесплатно.</p>
+        <a href="tel:+78001234567" style="display: inline-block; margin-top: 32px; font-family: Oswald; font-weight: 700; font-size: 22px; color: var(--amber); text-decoration: none; letter-spacing: 0.03em;">8 800 123-45-67</a>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Звонок бесплатный, работаем 8:00-22:00</div>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="flex gap-4 items-start" style="padding: 20px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px;">
+          <div style="min-width: 32px; height: 32px; background: var(--amber); display: flex; align-items: center; justify-content: center; border-radius: 2px;"><svg viewBox="0 0 16 16" fill="var(--ink)" class="w-4 h-4"><path d="M13 4L6.5 11 3 7.5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white); margin-bottom: 4px;">Прозрачное ценообразование</div><div style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Смета до начала работ. Никаких сюрпризов при выдаче.</div></div>
+        </div>
+        <div class="flex gap-4 items-start" style="padding: 20px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px;">
+          <div style="min-width: 32px; height: 32px; background: var(--amber); display: flex; align-items: center; justify-content: center; border-radius: 2px;"><svg viewBox="0 0 16 16" fill="var(--ink)" class="w-4 h-4"><path d="M13 4L6.5 11 3 7.5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white); margin-bottom: 4px;">Официальные запчасти</div><div style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Работаем только с проверенными поставщиками. Все комплектующие с документами.</div></div>
+        </div>
+        <div class="flex gap-4 items-start" style="padding: 20px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px;">
+          <div style="min-width: 32px; height: 32px; background: var(--amber); display: flex; align-items: center; justify-content: center; border-radius: 2px;"><svg viewBox="0 0 16 16" fill="var(--ink)" class="w-4 h-4"><path d="M13 4L6.5 11 3 7.5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white); margin-bottom: 4px;">Гарантия на работы</div><div style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Письменная гарантия на весь выполненный ремонт - от 6 месяцев до 2 лет.</div></div>
+        </div>
+        <div class="flex gap-4 items-start" style="padding: 20px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px;">
+          <div style="min-width: 32px; height: 32px; background: var(--amber); display: flex; align-items: center; justify-content: center; border-radius: 2px;"><svg viewBox="0 0 16 16" fill="var(--ink)" class="w-4 h-4"><path d="M13 4L6.5 11 3 7.5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white); margin-bottom: 4px;">Срок соблюдаем</div><div style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Договорились - сделаем. Задержка - компенсируем скидкой.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ОТЗЫВЫ ==================== -->
+  <section id="reviews" style="padding: clamp(60px, 8vw, 120px) 0; background: var(--ink);">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="mb-14">
+        <span style="font-family: Oswald; color: var(--amber); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">Что говорят клиенты</span>
+        <h2 style="font-family: Oswald; font-weight: 700; font-size: clamp(32px,5vw,56px); color: var(--off-white); margin: 8px 0 0; text-transform: uppercase;">Отзывы</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div style="background: var(--steel); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px;">
+          <div class="flex gap-1 mb-3"><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg></div>
+          <p style="font-size: 15px; line-height: 1.75; color: var(--text-light); margin: 0 0 20px; font-style: italic;">«Быстро нашли проблему с двигателем, которую два других сервиса не смогли диагностировать. Работали аккуратно, без лишних трат.»</p>
+          <div style="border-top: 1px solid var(--border); padding-top: 16px;"><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white);">Сергей К.</div><div style="font-size: 13px; color: var(--muted); margin-top: 2px;">Toyota Camry</div></div>
+        </div>
+        <div style="background: var(--steel); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px;">
+          <div class="flex gap-1 mb-3"><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg></div>
+          <p style="font-size: 15px; line-height: 1.75; color: var(--text-light); margin: 0 0 20px; font-style: italic;">«Делала плановое ТО. Всё прозрачно - показали что делают, объяснили зачем. Цены честные, никаких сюрпризов.»</p>
+          <div style="border-top: 1px solid var(--border); padding-top: 16px;"><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white);">Наталья В.</div><div style="font-size: 13px; color: var(--muted); margin-top: 2px;">Kia Sportage</div></div>
+        </div>
+        <div style="background: var(--steel); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px;">
+          <div class="flex gap-1 mb-3"><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg><svg viewBox="0 0 16 16" class="w-4 h-4 fill-amber-400"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg></div>
+          <p style="font-size: 15px; line-height: 1.75; color: var(--text-light); margin: 0 0 20px; font-style: italic;">«Ремонтировал подвеску после ямы. Сделали за один день, дали гарантию полгода. Уже рекомендовал коллегам.»</p>
+          <div style="border-top: 1px solid var(--border); padding-top: 16px;"><div style="font-family: Oswald; font-weight: 600; font-size: 16px; color: var(--off-white);">Алексей Р.</div><div style="font-size: 13px; color: var(--muted); margin-top: 2px;">BMW 3 Series</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== КОНТАКТЫ ==================== -->
+  <section id="contact" style="padding: clamp(60px, 8vw, 120px) 0; background: var(--steel);">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16">
+      <!-- Контактная информация -->
+      <div>
+        <span style="font-family: Oswald; color: var(--amber); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">Свяжитесь с нами</span>
+        <h2 style="font-family: Oswald; font-weight: 700; font-size: clamp(28px,4vw,48px); color: var(--off-white); margin: 8px 0 32px; text-transform: uppercase;">Записаться<br>на ремонт</h2>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4 items-start">
+            <div style="color: var(--amber); min-width: 40px; height: 40px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg></div>
+            <div><div style="font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px;">Телефон</div><div style="font-family: Oswald; font-weight: 600; font-size: 17px; color: var(--off-white);">8 800 123-45-67</div><div style="font-size: 13px; color: var(--muted);">Бесплатно, 8:00–22:00</div></div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div style="color: var(--amber); min-width: 40px; height: 40px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg></div>
+            <div><div style="font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px;">Адрес</div><div style="font-family: Oswald; font-weight: 600; font-size: 17px; color: var(--off-white);">ул. Средняя, 12</div><div style="font-size: 13px; color: var(--muted);">Ессентуки</div></div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div style="color: var(--amber); min-width: 40px; height: 40px; background: var(--plate); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg></div>
+            <div><div style="font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px;">Режим работы</div><div style="font-family: Oswald; font-weight: 600; font-size: 17px; color: var(--off-white);">Пн–Вс: 8:00–22:00</div><div style="font-size: 13px; color: var(--muted);">Без выходных</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Форма -->
+      <div id="form-container" style="background: var(--plate); border: 1px solid var(--border); border-radius: 4px; padding: clamp(24px, 4vw, 40px);">
+        <form id="callback-form" class="flex flex-col gap-4">
+          <h3 style="font-family: Oswald; font-weight: 700; font-size: 22px; color: var(--off-white); margin: 0 0 8px; text-transform: uppercase;">Оставить заявку</h3>
+          <div><label style="display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Ваше имя</label><input type="text" name="name" class="form-input" placeholder="Иван Петров" required></div>
+          <div><label style="display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Телефон</label><input type="tel" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required></div>
+          <div><label style="display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Услуга</label>
+            <select name="service" class="form-input" style="cursor: pointer;">
+              <option value="">Выберите услугу...</option>
+              <option>Компьютерная диагностика</option><option>Замена масла и фильтров</option>
+              <option>Ремонт тормозной системы</option><option>Шиномонтаж и балансировка</option>
+              <option>Кузовной ремонт</option><option>Техническое обслуживание</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div><label style="display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Комментарий (необязательно)</label><textarea name="message" class="form-input" rows="3" placeholder="Опишите проблему или вопрос..." style="resize: vertical;"></textarea></div>
+          <button type="submit" style="background: var(--amber); color: var(--ink); font-family: Oswald; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; padding: 14px; border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s; text-transform: uppercase; margin-top: 4px;">Отправить заявку</button>
+          <p style="font-size: 12px; color: var(--muted); text-align: center;">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+        </form>
+        <div id="form-success" style="display: none; text-align: center; padding: 20px;">
+          <div style="width: 64px; height: 64px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;"><svg viewBox="0 0 24 24" fill="none" class="w-8 h-8"><path d="M5 12l5 5L19 7" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 style="font-family: Oswald; font-size: 24px; color: var(--off-white);">Заявка отправлена!</h3>
+          <p style="color: var(--text-light);">Мы перезвоним вам в ближайшие 15 минут.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ФУТЕР ==================== -->
+  <footer style="background: var(--ink); border-top: 1px solid var(--border); padding: 32px 0;">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div style="font-family: Oswald; font-weight: 700; font-size: 18px; color: var(--off-white); letter-spacing: 0.05em;">АВТО<span style="color: var(--amber);">МАСТЕР</span></div>
+      <div style="font-size: 13px; color: var(--muted);">© 2025 АвтоМастер. Все права защищены.</div>
+      <div style="font-size: 13px; color: var(--muted);">ул. Автомобильная, 12 · Москва</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Мобильное меню
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuBars = document.querySelectorAll('#menu-btn .menu-bar');
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    // Анимация бургера в крестик
+    if (!mobileMenu.classList.contains('hidden')) {
+      menuBars[0].style.transform = 'translateY(7px) rotate(45deg)';
+      menuBars[0].style.background = 'var(--amber)';
+      menuBars[1].style.opacity = '0';
+      menuBars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      menuBars[2].style.background = 'var(--amber)';
+    } else {
+      menuBars[0].style.transform = 'none';
+      menuBars[0].style.background = 'var(--off-white)';
+      menuBars[1].style.opacity = '1';
+      menuBars[2].style.transform = 'none';
+      menuBars[2].style.background = 'var(--off-white)';
+    }
+  }
+
+  menuBtn.addEventListener('click', toggleMenu);
+  // Закрытие меню при клике на ссылку
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+    });
+  });
+
+  // Эффекты наведения для кнопок (имитация React-событий)
+  document.querySelectorAll('.hero-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => btn.style.background = 'var(--amber-dim)');
+    btn.addEventListener('mouseleave', () => btn.style.background = 'var(--amber)');
+  });
+  document.querySelectorAll('.hero-btn-outline').forEach(btn => {
+    btn.addEventListener('mouseenter', () => btn.style.borderColor = 'var(--amber)');
+    btn.addEventListener('mouseleave', () => btn.style.borderColor = 'var(--border)');
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('mouseenter', e => e.target.style.color = 'var(--amber)');
+    link.addEventListener('mouseleave', e => e.target.style.color = 'var(--text-light)');
+  });
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.style.borderColor = 'var(--amber)');
+    card.addEventListener('mouseleave', () => card.style.borderColor = 'var(--border)');
+  });
+  const form = document.getElementById('callback-form');
+  const formContainer = document.getElementById('form-container');
+  const successDiv = document.getElementById('form-success');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      successDiv.style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>
